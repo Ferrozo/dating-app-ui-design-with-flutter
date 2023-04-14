@@ -1,0 +1,99 @@
+import 'package:flutter/material.dart';
+
+import '../../core/app_colors.dart';
+
+class MatcheCard extends StatelessWidget {
+  const MatcheCard({
+    super.key,
+    required this.img,
+    required this.name,
+    required this.matchPercent,
+    required this.isActive,
+  });
+  final String img;
+  final String matchPercent;
+  final String name;
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      width: 145,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 5,
+      ),
+      margin: const EdgeInsets.only(left: 10),
+      decoration: BoxDecoration(
+        color: Colors.black.withOpacity(0.2),
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(img),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+            alignment: Alignment.center,
+            height: 20,
+            width: 75,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              matchPercent,
+              style: TextStyle(
+                color: AppColors.blackColor,
+                fontSize: 12,
+              ),
+            ),
+          ),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Name, ',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Text(
+                      '26',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
+                    Container(
+                      height: 8,
+                      width: 8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: isActive ? AppColors.greenColor : Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ))
+        ],
+      ),
+    );
+  }
+}
