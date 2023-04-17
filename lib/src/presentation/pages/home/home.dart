@@ -1,8 +1,6 @@
 import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unicons/unicons.dart';
-
 import '../../../common/export_widgets.dart';
 import '../export_pages.dart';
 
@@ -11,20 +9,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Color> gradientColors = [
-      AppColors.greenColor.withOpacity(0.2),
-      AppColors.greenColor.withOpacity(0.2),
-      AppColors.blackColor.withOpacity(0.5),
-      AppColors.blackColor.withOpacity(0.2),
-      AppColors.blackColor.withOpacity(0.03),
-      AppColors.redColor.withOpacity(0.04),
-      AppColors.redColor.withOpacity(0.3),
-      AppColors.redColor.withOpacity(0.5),
-    ];
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: gradientColors,
+          colors: AppColors.gradientColors,
           begin: Alignment.topCenter,
           end: Alignment.bottomRight,
         ),
@@ -158,8 +146,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                height: 370,
+              Expanded(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
@@ -195,18 +182,27 @@ class HomePage extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       Row(
-                        children: const [
-                          MatcheCard(
+                        children: [
+                          const MatcheCard(
                             img: 'assets/models/model_03.jpg',
                             isActive: false,
                             name: 'Rihanna',
                             matchPercent: '80% match',
                           ),
-                          MatcheCard(
-                            img: 'assets/models/model_04.jpg',
-                            isActive: true,
-                            name: 'Rihanna',
-                            matchPercent: '80% match',
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const ChatPage(),
+                                ),
+                              );
+                            },
+                            child: const MatcheCard(
+                              img: 'assets/models/model_04.jpg',
+                              isActive: true,
+                              name: 'Rihanna',
+                              matchPercent: '80% match',
+                            ),
                           ),
                         ],
                       ),

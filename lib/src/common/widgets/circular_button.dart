@@ -6,18 +6,20 @@ class CircularButton extends StatelessWidget {
     required this.icon,
     required this.onPressed,
     required this.isFavorite,
+    required this.isCenter,
   });
   final Function onPressed;
   final Icon icon;
   final bool isFavorite;
+  final bool isCenter;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(left: 20),
-      height: isFavorite ? 55 : 45,
-      width: isFavorite ? 55 : 45,
+      height: isCenter ? 55 : 45,
+      width: isCenter ? 55 : 45,
       decoration: BoxDecoration(
-        color: isFavorite ? Colors.white : Colors.grey.withOpacity(0.6),
+        color: isCenter ? Colors.white : Colors.grey.withOpacity(0.6),
         borderRadius: BorderRadius.circular(60),
       ),
       child: IconButton(
@@ -26,8 +28,12 @@ class CircularButton extends StatelessWidget {
           onPressed();
         },
         icon: icon,
-        color: isFavorite ? Colors.pink : Colors.white,
-        iconSize: 25,
+        color: isCenter && isFavorite
+            ? Colors.pink
+            : isCenter && false == false
+                ? Colors.black87
+                : Colors.white,
+        iconSize: isCenter ? 28 : 20,
       ),
     );
   }
