@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../core/app_colors.dart';
 
-class MatcheCard extends StatelessWidget {
-  const MatcheCard({
+class MatchCard extends StatelessWidget {
+  const MatchCard({
     super.key,
     required this.img,
     required this.name,

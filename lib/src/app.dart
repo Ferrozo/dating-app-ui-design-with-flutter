@@ -1,4 +1,4 @@
-import 'package:dating_app_ui_design_with_flutter/src/presentation/pages/home/home.dart';
+import 'package:dating_app_ui_design_with_flutter/src/presentation/pages/export_pages.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {

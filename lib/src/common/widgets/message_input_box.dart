@@ -1,5 +1,6 @@
 import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:unicons/unicons.dart';
 
 class MessageInputBox extends StatelessWidget {
   const MessageInputBox({super.key});
@@ -18,8 +19,8 @@ class MessageInputBox extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: 200,
+          Expanded(
+            flex: 2,
             child: TextField(
               decoration: InputDecoration(
                   border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -30,24 +31,26 @@ class MessageInputBox extends StatelessWidget {
                   )),
             ),
           ),
-          SizedBox(
-            width: 100,
+          Expanded(
+            flex: 1,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {},
-                    icon: const Icon(
-                      Icons.perm_media_outlined,
-                      size: 20,
+                    icon: Icon(
+                      UniconsLine.camera_plus,
+                      size: 25,
+                      color: Colors.grey.shade600,
                     )),
                 IconButton(
                     padding: const EdgeInsets.all(0),
                     onPressed: () {},
-                    icon: const Icon(
-                      Icons.perm_media_outlined,
-                      size: 20,
+                    icon: Icon(
+                      UniconsLine.image,
+                      size: 25,
+                      color: Colors.grey.shade600,
                     ))
               ],
             ),

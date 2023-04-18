@@ -165,14 +165,14 @@ class HomePage extends StatelessWidget {
                                 ),
                               );
                             },
-                            child: const MatcheCard(
+                            child: const MatchCard(
                               img: 'assets/models/model_01.jpg',
                               isActive: false,
                               name: 'Rihanna',
                               matchPercent: '80% match',
                             ),
                           ),
-                          const MatcheCard(
+                          const MatchCard(
                             img: 'assets/models/model_02.jpg',
                             isActive: true,
                             name: 'Rihanna',
@@ -183,7 +183,7 @@ class HomePage extends StatelessWidget {
                       const SizedBox(height: 20),
                       Row(
                         children: [
-                          const MatcheCard(
+                          const MatchCard(
                             img: 'assets/models/model_03.jpg',
                             isActive: false,
                             name: 'Rihanna',
@@ -197,7 +197,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               );
                             },
-                            child: const MatcheCard(
+                            child: const MatchCard(
                               img: 'assets/models/model_04.jpg',
                               isActive: true,
                               name: 'Rihanna',

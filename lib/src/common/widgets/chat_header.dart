@@ -2,8 +2,8 @@ import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ChatHeader extends StatelessWidget {
-  const ChatHeader({super.key});
-
+  const ChatHeader({super.key, required this.userImg});
+  final String userImg;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -24,8 +24,8 @@ class ChatHeader extends StatelessWidget {
             height: 50,
             width: 50,
             decoration: BoxDecoration(
-                image: const DecorationImage(
-                  image: AssetImage('assets/models/model_02.jpg'),
+                image: DecorationImage(
+                  image: AssetImage(userImg),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(100)),

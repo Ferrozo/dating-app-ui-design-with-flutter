@@ -48,8 +48,7 @@ class HistoryContainer extends StatelessWidget {
             Text(
               name,
               style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
+                fontSize: 12,
                 color: Colors.white,
               ),
             ),
