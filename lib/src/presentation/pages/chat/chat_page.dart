@@ -11,8 +11,8 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const String picture = 'assets/models/model_02.jpg';
     return PageTransition(
-      durationValue: 1000,
-      offset: 150,
+      durationValue: 900,
+      offset: 200,
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

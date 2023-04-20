@@ -2,6 +2,7 @@ import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../common/export_widgets.dart';
+import '../../../core/app_assets.dart';
 import '../export_pages.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,8 +31,9 @@ class HomePage extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
+                icon: Image.asset(
+                  AppAssets.settingIcon,
+                  width: 25,
                 ),
               ),
               const Text(

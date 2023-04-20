@@ -1,3 +1,4 @@
+import 'package:dating_app_ui_design_with_flutter/src/core/app_assets.dart';
 import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
@@ -42,15 +43,14 @@ class MessageInputBox extends StatelessWidget {
                     icon: Icon(
                       UniconsLine.camera_plus,
                       size: 25,
-                      color: Colors.grey.shade600,
+                      color: Colors.grey.shade200,
                     )),
                 IconButton(
                     padding: const EdgeInsets.all(0),
                     onPressed: () {},
-                    icon: Icon(
-                      UniconsLine.image,
-                      size: 25,
-                      color: Colors.grey.shade600,
+                    icon: Image.asset(
+                      AppAssets.galleryIcon,
+                      width: 22,
                     ))
               ],
             ),

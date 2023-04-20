@@ -9,7 +9,7 @@ class CircularButton extends StatelessWidget {
     required this.isCenter,
   });
   final Function onPressed;
-  final Icon icon;
+  final Widget icon;
   final bool isFavorite;
   final bool isCenter;
   @override

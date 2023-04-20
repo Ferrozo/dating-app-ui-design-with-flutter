@@ -18,7 +18,7 @@ class MessageContainer extends StatelessWidget {
     return Transform.scale(
       scale: 1,
       child: TransitionAnimation(
-        durationValue: 1100,
+        durationValue: 700,
         offset: 140.0,
         isSent: isSent,
         child: Column(
