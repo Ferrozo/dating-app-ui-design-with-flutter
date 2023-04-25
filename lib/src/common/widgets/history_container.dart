@@ -37,7 +37,10 @@ class HistoryContainer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(60),
-              image: DecorationImage(image: AssetImage(img)),
+              image: DecorationImage(
+                image: AssetImage(img),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),

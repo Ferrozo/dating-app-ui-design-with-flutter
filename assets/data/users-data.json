@@ -1,0 +1,204 @@
+{
+  "users": [
+    {
+      "firstName": "Annah",
+      "lastName": "Jackson",
+      "age": 22,
+      "isFavorite": false,
+      "img": "assets/models/model_01.jpg",
+      "history": [],
+      "location": "Paris, FR",
+      "percentMatch": 77,
+      "isOnline": true,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Rebecca",
+      "lastName": "Louis",
+      "age": 19,
+      "isFavorite": true,
+      "img": "assets/models/model_02.jpg",
+      "history": [],
+      "location": "London, ENG",
+      "percentMatch": 92,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Jenna",
+      "lastName": "Andrew",
+      "age": 24,
+      "isFavorite": false,
+
+      "img": "assets/models/model_03.jpg",
+      "history": [],
+      "location": "London, ENG",
+      "percentMatch": 92,
+      "isOnline": true,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": true,
+      "img": "assets/models/model_04.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_05.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": true,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":true
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_06.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_07.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_08.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_09.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_10.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Khali :)",
+      "age": 24,
+      "isFavorite": false,
+      "img": "assets/models/model_11.jpg",
+      "history": [],
+      "location": "New York, US",
+      "percentMatch": 63,
+      "isOnline": false,
+      "messages": [
+        {
+          "object":"",
+          "time":"",
+          "isSender":false
+        }
+      ]
+    }
+    
+  ]
+}

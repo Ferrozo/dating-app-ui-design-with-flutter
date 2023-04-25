@@ -9,11 +9,13 @@ class MatchCard extends StatelessWidget {
     required this.name,
     required this.matchPercent,
     required this.isActive,
+    required this.age,
   });
   final String img;
   final String matchPercent;
   final String name;
   final bool isActive;
+  final int age;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class MatchCard extends StatelessWidget {
         horizontal: 10,
         vertical: 5,
       ),
-      margin: const EdgeInsets.only(left: 10),
+      margin: const EdgeInsets.only(left: 10, top: 15),
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.2),
         borderRadius: BorderRadius.circular(15),
@@ -45,7 +47,7 @@ class MatchCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              matchPercent,
+              '$matchPercent% match',
               style: TextStyle(
                 color: AppColors.blackColor,
                 fontSize: 12,
@@ -62,17 +64,17 @@ class MatchCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      'Name, ',
-                      style: TextStyle(
+                    Text(
+                      '$name, ',
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const Text(
-                      '26',
-                      style: TextStyle(
+                    Text(
+                      '$age',
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

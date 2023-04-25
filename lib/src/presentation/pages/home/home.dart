@@ -1,12 +1,37 @@
+import 'dart:convert';
+
 import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../common/export_widgets.dart';
 import '../../../core/app_assets.dart';
+import '../../../model/user_model.dart';
+import '../../../services/get_user.dart';
 import '../export_pages.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final getUsers = GetUser();
+  List _users = [];
+
+  Future<void> readJsonFile() async {
+    final String response =
+        await rootBundle.loadString('assets/data/users-data.json');
+    final data = await json.decode(response);
+    _users = data['users'] as List;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJsonFile();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +164,7 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(width: 5),
                   Text(
-                    '28',
+                    '${_users.length}',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.white.withOpacity(0.8),
@@ -151,65 +176,27 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const DetailsPage(
-                                    age: 26,
-                                    description: 'Lucian Paloma, 26',
-                                    img: 'assets/models/model_01.jpg',
-                                  ),
-                                ),
+                  child: _users.isEmpty
+                      ? const Center(
+                          child: CircularProgressIndicator(
+                            color: Color(0xff76bbaa),
+                          ),
+                        )
+                      : Wrap(
+                          children: List.generate(
+                            _users.length,
+                            (index) {
+                              return MatchCard(
+                                img: _users[index]['img'],
+                                name: _users[index]['firstName'],
+                                matchPercent:
+                                    _users[index]['percentMatch'].toString(),
+                                isActive: _users[index]['isOnline'],
+                                age: _users[index]['age'],
                               );
                             },
-                            child: const MatchCard(
-                              img: 'assets/models/model_01.jpg',
-                              isActive: false,
-                              name: 'Rihanna',
-                              matchPercent: '80% match',
-                            ),
                           ),
-                          const MatchCard(
-                            img: 'assets/models/model_02.jpg',
-                            isActive: true,
-                            name: 'Rihanna',
-                            matchPercent: '80% match',
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          const MatchCard(
-                            img: 'assets/models/model_03.jpg',
-                            isActive: false,
-                            name: 'Rihanna',
-                            matchPercent: '80% match',
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const ChatPage(),
-                                ),
-                              );
-                            },
-                            child: const MatchCard(
-                              img: 'assets/models/model_04.jpg',
-                              isActive: true,
-                              name: 'Rihanna',
-                              matchPercent: '80% match',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
                 ),
               ),
             ],
