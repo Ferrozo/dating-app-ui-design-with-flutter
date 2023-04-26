@@ -1,12 +1,9 @@
-import 'dart:convert';
-
 import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
+import 'package:dating_app_ui_design_with_flutter/src/services/get_users.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../common/export_widgets.dart';
 import '../../../core/app_assets.dart';
-import '../../../model/user_model.dart';
-import '../../../services/get_user.dart';
 import '../export_pages.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,20 +14,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final getUsers = GetUser();
+  final users = GetUsers();
   List _users = [];
-
-  Future<void> readJsonFile() async {
-    final String response =
-        await rootBundle.loadString('assets/data/users-data.json');
-    final data = await json.decode(response);
-    _users = data['users'] as List;
-  }
 
   @override
   void initState() {
     super.initState();
-    readJsonFile();
+    users.getAllUsers().then((result) {
+      setState(() {
+        _users = result;
+      });
+    });
   }
 
   @override
@@ -39,8 +33,8 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: AppColors.gradientColors,
-          begin: Alignment.topCenter,
-          end: Alignment.bottomRight,
+          begin: Alignment.topRight,
+          end: const Alignment(0.8, 1),
         ),
       ),
       child: Scaffold(
@@ -110,45 +104,18 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: const [
-                    HistoryContainer(
-                      isViewed: true,
-                      isActive: true,
-                      name: 'John',
-                      img: 'assets/models/model_01.jpg',
-                    ),
-                    HistoryContainer(
-                      isViewed: false,
-                      isActive: false,
-                      name: 'John',
-                      img: 'assets/models/model_02.jpg',
-                    ),
-                    HistoryContainer(
-                      isViewed: false,
-                      isActive: true,
-                      name: 'John',
-                      img: 'assets/models/model_03.jpg',
-                    ),
-                    HistoryContainer(
-                      isViewed: true,
-                      isActive: false,
-                      name: 'John',
-                      img: 'assets/models/model_04.jpg',
-                    ),
-                    HistoryContainer(
-                      isViewed: false,
-                      isActive: false,
-                      name: 'John',
-                      img: 'assets/models/model_02.jpg',
-                    ),
-                    HistoryContainer(
-                      isViewed: true,
-                      isActive: true,
-                      name: 'John',
-                      img: 'assets/models/model_04.jpg',
-                    ),
-                  ],
+                child: Wrap(
+                  children: List.generate(
+                    _users.length,
+                    (index) {
+                      return HistoryContainer(
+                        wasViewed: _users[index]['viewed'],
+                        name: _users[index]['firstName'],
+                        img: _users[index]['img'],
+                        isActive: _users[index]['isOnline'],
+                      );
+                    },
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
@@ -186,13 +153,30 @@ class _HomePageState extends State<HomePage> {
                           children: List.generate(
                             _users.length,
                             (index) {
-                              return MatchCard(
-                                img: _users[index]['img'],
-                                name: _users[index]['firstName'],
-                                matchPercent:
-                                    _users[index]['percentMatch'].toString(),
-                                isActive: _users[index]['isOnline'],
-                                age: _users[index]['age'],
+                              return InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (_) => DetailsPage(
+                                        img: _users[index]['img'],
+                                        age: _users[index]['age'],
+                                        firstName: _users[index]['firstName'],
+                                        isOnline: _users[index]['isOnline'],
+                                        lastName: _users[index]['lastName'],
+                                        location: _users[index]['location'],
+                                        messages: _users[index]['messages'],
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: MatchCard(
+                                  img: _users[index]['img'],
+                                  name: _users[index]['firstName'],
+                                  matchPercent:
+                                      _users[index]['percentMatch'].toString(),
+                                  isActive: _users[index]['isOnline'],
+                                  age: _users[index]['age'],
+                                ),
                               );
                             },
                           ),

@@ -5,11 +5,21 @@ import '../../../common/export_widgets.dart';
 import '../../../core/app_colors.dart';
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+  const ChatPage({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.messages,
+    required this.isOnline,
+  });
+
+  final String name;
+  final String image;
+  final List<dynamic>? messages;
+  final bool isOnline;
 
   @override
   Widget build(BuildContext context) {
-    const String picture = 'assets/models/model_02.jpg';
     return PageTransition(
       durationValue: 900,
       offset: 200,
@@ -32,9 +42,9 @@ class ChatPage extends StatelessWidget {
                 const Spacer(),
                 Row(
                   children: [
-                    const Text(
-                      'Name',
-                      style: TextStyle(
+                    Text(
+                      name,
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
@@ -44,7 +54,9 @@ class ChatPage extends StatelessWidget {
                       width: 6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.greenColor),
+                          color: isOnline
+                              ? AppColors.greenColor
+                              : Colors.grey.shade500),
                     )
                   ],
                 ),
@@ -59,68 +71,44 @@ class ChatPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const ChatHeader(
-                  userImg: picture,
+                ChatHeader(
+                  name: name,
+                  userImg: image,
                 ),
                 const SizedBox(height: 10),
-                Container(
-                  constraints: BoxConstraints(
-                    maxHeight: MediaQuery.of(context).size.height - 280,
-                  ),
-                  child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Column(
-                        children: [
-                          Container(
-                            alignment: Alignment.bottomRight,
-                            child: const MessageContainer(
-                              isSent: false,
-                              messageText: 'Hello! How are doing? ',
-                              imgSender: picture,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: const MessageContainer(
-                              isSent: true,
-                              messageText: 'Hi! Great?',
-                              imgSender: picture,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.bottomRight,
-                            child: const MessageContainer(
-                              isSent: false,
-                              messageText:
-                                  'Hello! How are doing? \n Can I see You tomorrow? ',
-                              imgSender: picture,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: const MessageContainer(
-                              isSent: true,
-                              messageText: 'Hi! Great?',
-                              imgSender: picture,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.bottomRight,
-                            child: const MessageContainer(
-                              isSent: false,
-                              messageText: 'Hello! How are doing? ',
-                              imgSender: picture,
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
                 Expanded(
-                    child: Container(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  alignment: Alignment.bottomCenter,
-                  child: const MessageInputBox(),
-                ))
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    physics: const BouncingScrollPhysics(),
+                    child: Column(
+                      children: [
+                        Container(
+                          constraints: BoxConstraints(
+                            maxHeight: MediaQuery.of(context).size.height - 280,
+                          ),
+                          child: ListView.builder(
+                              itemCount: messages!.length,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: MessageContainer(
+                                    isSender: messages![index]['isSender'],
+                                    messageText: messages![index]['object'],
+                                    imgSender: image,
+                                    time: messages![index]['time'],
+                                  ),
+                                );
+                              }),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          alignment: Alignment.bottomCenter,
+                          child: const MessageInputBox(),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

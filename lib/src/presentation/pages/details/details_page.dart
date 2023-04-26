@@ -4,17 +4,26 @@ import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
 import '../../../common/export_widgets.dart';
+import '../chat/chat_page.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({
     super.key,
+    required this.firstName,
+    required this.lastName,
+    required this.location,
     required this.img,
-    required this.description,
+    required this.isOnline,
     required this.age,
+    required this.messages,
   });
+  final String firstName;
+  final String lastName;
   final String img;
-  final String description;
+  final bool isOnline;
   final int age;
+  final String location;
+  final List<dynamic> messages;
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -58,7 +67,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 Row(
                   children: [
                     Text(
-                      widget.description,
+                      '${widget.firstName}  ${widget.firstName}, ${widget.age}',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -71,23 +80,25 @@ class _DetailsPageState extends State<DetailsPage> {
                       width: 8,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.greenColor,
+                        color: widget.isOnline
+                            ? AppColors.greenColor
+                            : Colors.grey.shade500,
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
                 Row(
-                  children: const [
-                    Icon(
+                  children: [
+                    const Icon(
                       UniconsLine.location_point,
                       color: Colors.white54,
                       size: 20,
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                     Text(
-                      'Location',
-                      style: TextStyle(
+                      widget.location,
+                      style: const TextStyle(
                         color: Colors.white54,
                         fontSize: 16,
                       ),
@@ -123,7 +134,18 @@ class _DetailsPageState extends State<DetailsPage> {
                           width: 25,
                         ),
                         isFavorite: false,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => ChatPage(
+                                isOnline: widget.isOnline,
+                                name: widget.firstName,
+                                image: widget.img,
+                                messages: widget.messages,
+                              ),
+                            ),
+                          );
+                        },
                         isCenter: false,
                       ),
                     ],

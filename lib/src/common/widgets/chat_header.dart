@@ -2,8 +2,13 @@ import 'package:dating_app_ui_design_with_flutter/src/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ChatHeader extends StatelessWidget {
-  const ChatHeader({super.key, required this.userImg});
+  const ChatHeader({
+    super.key,
+    required this.userImg,
+    required this.name,
+  });
   final String userImg;
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -38,7 +43,7 @@ class ChatHeader extends StatelessWidget {
           child: Container(
             alignment: Alignment.center,
             child: Text(
-              'Name is waiting for a message from you!',
+              '$name is waiting for a message from you!',
               style: TextStyle(
                 color: AppColors.whiteColor,
                 fontSize: 12,

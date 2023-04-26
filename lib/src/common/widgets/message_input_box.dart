@@ -23,6 +23,9 @@ class MessageInputBox extends StatelessWidget {
           Expanded(
             flex: 2,
             child: TextField(
+              style: TextStyle(
+                color: AppColors.whiteColor.withOpacity(0.8),
+              ),
               decoration: InputDecoration(
                   border: const OutlineInputBorder(borderSide: BorderSide.none),
                   hintText: 'Write here your message',

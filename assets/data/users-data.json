@@ -7,14 +7,20 @@
       "isFavorite": false,
       "img": "assets/models/model_01.jpg",
       "history": [],
+      "viewed": false,
       "location": "Paris, FR",
       "percentMatch": 77,
       "isOnline": true,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
@@ -25,14 +31,20 @@
       "isFavorite": true,
       "img": "assets/models/model_02.jpg",
       "history": [],
+      "viewed": false,
       "location": "London, ENG",
       "percentMatch": 92,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
@@ -44,161 +56,219 @@
 
       "img": "assets/models/model_03.jpg",
       "history": [],
+      "viewed": true,
       "location": "London, ENG",
       "percentMatch": 92,
       "isOnline": true,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
       "firstName": "Mia",
       "lastName": "Khali :)",
-      "age": 24,
+      "age": 21,
       "isFavorite": true,
       "img": "assets/models/model_04.jpg",
       "history": [],
+      "viewed": false,
       "location": "New York, US",
       "percentMatch": 63,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Esmer",
+      "lastName": "Jhonson",
+      "age": 26,
       "isFavorite": false,
       "img": "assets/models/model_05.jpg",
       "history": [],
+      "viewed": false,
       "location": "New York, US",
-      "percentMatch": 63,
+      "percentMatch": 77,
       "isOnline": true,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":true
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
+        },
+        {
+          "object": "Where are u now?\n I need you here.",
+          "time": "today, 12:52 PM",
+          "isSender": false
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Emma",
+      "lastName": "Charlotte",
+      "age": 20,
       "isFavorite": false,
       "img": "assets/models/model_06.jpg",
       "history": [],
-      "location": "New York, US",
-      "percentMatch": 63,
+      "viewed": false,
+      "location": "Los Angeles, US",
+      "percentMatch": 89,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Ava",
+      "lastName": "Sophia",
+      "age": 21,
       "isFavorite": false,
       "img": "assets/models/model_07.jpg",
       "history": [],
+      "viewed": false,
       "location": "New York, US",
-      "percentMatch": 63,
+      "percentMatch": 61,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Isabella",
+      "lastName": "Evelyn",
+      "age": 27,
       "isFavorite": false,
       "img": "assets/models/model_08.jpg",
       "history": [],
-      "location": "New York, US",
-      "percentMatch": 63,
+      "viewed": false,
+      "location": "Houston, US",
+      "percentMatch": 91,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Raya",
+      "lastName": "Arleth",
+      "age": 23,
       "isFavorite": false,
       "img": "assets/models/model_09.jpg",
       "history": [],
+      "viewed": false,
       "location": "New York, US",
-      "percentMatch": 63,
+      "percentMatch": 96,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Freyja",
+      "lastName": "Oakleigh",
+      "age": 30,
       "isFavorite": false,
       "img": "assets/models/model_10.jpg",
       "history": [],
+      "viewed": false,
       "location": "New York, US",
-      "percentMatch": 63,
+      "percentMatch": 55,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     },
     {
-      "firstName": "Mia",
-      "lastName": "Khali :)",
-      "age": 24,
+      "firstName": "Zayla",
+      "lastName": "Della",
+      "age": 19,
       "isFavorite": false,
       "img": "assets/models/model_11.jpg",
       "history": [],
+      "viewed": true,
       "location": "New York, US",
-      "percentMatch": 63,
+      "percentMatch": 84,
       "isOnline": false,
       "messages": [
         {
-          "object":"",
-          "time":"",
-          "isSender":false
+          "object": "Hello there.",
+          "time": "today, 12:17 PM ",
+          "isSender": false
+        },
+        {
+          "object": "Hey, how are u?",
+          "time": "31 min",
+          "isSender": true
         }
       ]
     }
-    
   ]
 }

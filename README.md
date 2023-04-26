@@ -1,16 +1,31 @@
-# dating_app_ui_design_with_flutter
+<div>
 
-A new Flutter project.
+<img src='1.png' width='280px'/>
+<img src='2.png' width='280px'/>
+<img src='3.png' width='280px'/>
+<img src='4.png' width='280px'/>
+<img src='5.png' width='280px'/>
+<img src='6.png' width='280px'/>
+</div>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Dating UI design App, the UI was created inspired from one share on dribble and I made it using Flutter/Dart.
 
-A few resources to get you started if this is your first Flutter project:
+Give a star (⭐) the repo and follow me it really motivates me to share more open source 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### Clone the repository
+```
+git clone https://github.com/Ferrozo/dating-app-ui-design-with-flutter.git
+```
+### Install the dependecies
+```
+flutter pub get
+```
+### Run the project
+
+```
+flutter run
+```

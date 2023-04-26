@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 class MessageContainer extends StatelessWidget {
   const MessageContainer({
     super.key,
-    required this.isSent,
+    required this.isSender,
     required this.messageText,
     required this.imgSender,
+    required this.time,
   });
 
-  final bool isSent;
+  final bool isSender;
   final String messageText;
   final String imgSender;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +22,17 @@ class MessageContainer extends StatelessWidget {
       child: TransitionAnimation(
         durationValue: 700,
         offset: 140.0,
-        isSent: isSent,
+        isSender: isSender,
         child: Column(
           crossAxisAlignment:
-              isSent ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+              isSender ? CrossAxisAlignment.start : CrossAxisAlignment.end,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment:
-                  isSent ? MainAxisAlignment.start : MainAxisAlignment.end,
+                  isSender ? MainAxisAlignment.start : MainAxisAlignment.end,
               children: [
-                isSent
+                isSender
                     ? Container(
                         margin: const EdgeInsets.only(right: 5),
                         height: 25,
@@ -52,21 +54,22 @@ class MessageContainer extends StatelessWidget {
                     minWidth: 100,
                   ),
                   decoration: BoxDecoration(
-                    color: isSent
+                    color: isSender
                         ? AppColors.whiteColor
                         : AppColors.redColor.withOpacity(0.6),
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(isSent ? 0 : 20),
+                      bottomLeft: Radius.circular(isSender ? 0 : 20),
                       topLeft: const Radius.circular(20),
                       topRight: const Radius.circular(20),
-                      bottomRight: Radius.circular(isSent ? 20 : 0),
+                      bottomRight: Radius.circular(isSender ? 20 : 0),
                     ),
                   ),
                   child: Text(
                     messageText,
                     style: TextStyle(
-                      color:
-                          isSent ? AppColors.blackColor : AppColors.whiteColor,
+                      color: isSender
+                          ? AppColors.blackColor
+                          : AppColors.whiteColor,
                     ),
                   ),
                 ),
@@ -74,7 +77,7 @@ class MessageContainer extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             Text(
-              '00:00h',
+              time,
               style: TextStyle(
                 color: AppColors.whiteColor,
                 fontSize: 10,
@@ -93,11 +96,11 @@ class TransitionAnimation extends StatelessWidget {
     required this.child,
     required this.durationValue,
     required this.offset,
-    required this.isSent,
+    required this.isSender,
   });
   final Widget child;
   final double offset;
-  final bool isSent;
+  final bool isSender;
   final int durationValue;
 
   @override
@@ -107,13 +110,13 @@ class TransitionAnimation extends StatelessWidget {
       origin: const Offset(50.0, 50.0),
       child: TweenAnimationBuilder(
         curve: Curves.easeInSine,
-        duration: isSent
+        duration: isSender
             ? Duration(milliseconds: durationValue + 200)
             : Duration(milliseconds: durationValue),
         tween: Tween(begin: 1.0, end: 0.0),
         builder: ((context, value, child) {
           return Transform.translate(
-            offset: Offset(isSent ? value * -offset : value * offset, 0.0),
+            offset: Offset(isSender ? value * -offset : value * offset, 0.0),
             child: child,
           );
         }),

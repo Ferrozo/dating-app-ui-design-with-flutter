@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class HistoryContainer extends StatelessWidget {
   const HistoryContainer({
     super.key,
-    required this.isViewed,
+    required this.wasViewed,
     required this.name,
     required this.img,
     required this.isActive,
   });
-  final bool isViewed;
+  final bool wasViewed;
   final String name;
   final String img;
   final bool isActive;
@@ -25,7 +25,7 @@ class HistoryContainer extends StatelessWidget {
           width: 50,
           decoration: BoxDecoration(
             border: Border.all(
-              color: isViewed ? AppColors.redColor : Colors.transparent,
+              color: wasViewed ? Colors.transparent : AppColors.redColor,
               width: 1.8,
             ),
             color: Colors.transparent,
